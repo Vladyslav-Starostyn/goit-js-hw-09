@@ -4,9 +4,6 @@ buttonStopEl.disabled = true;
 const COLOR_INTERVAL = 1000;
 let timerId = null;
 
-console.log(buttonStartEl);
-console.log(buttonStopEl);
-
 buttonStartEl.addEventListener('click', onButtonStartClick);
 buttonStopEl.addEventListener('click', onButtonStopClick);
 
