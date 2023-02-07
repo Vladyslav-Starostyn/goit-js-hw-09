@@ -51,22 +51,26 @@ function addLeadingZero(value) {
 }
 
 function onButtonClick() {
-  timerId = setInterval(() => {
-    let counter = new Date(textEl.value) - new Date();
-    buttonStartEl.disabled = true;
-    if (counter >= 0) {
-      let timerObj = convertMs(counter);
-      daysEl.textContent = addLeadingZero(timerObj.days);
-      hoursEl.textContent = addLeadingZero(timerObj.hours);
-      minutesEl.textContent = addLeadingZero(timerObj.minutes);
-      secondsEi.textContent = addLeadingZero(timerObj.seconds);
-      if (counter < 10000) {
-        timerEl.style.color = 'tomato';
-      }
-    } else {
-      Notiflix.Notify.success('Countdown finished');
-      timerEl.style.color = 'black';
-      clearInterval(timerId);
+  onTimerTik();
+
+  timerId = setInterval(onTimerTik, 1000);
+}
+
+function onTimerTik() {
+  const counter = new Date(textEl.value) - new Date();
+  buttonStartEl.disabled = true;
+  if (counter >= 0) {
+    const timerObj = convertMs(counter);
+    daysEl.textContent = addLeadingZero(timerObj.days);
+    hoursEl.textContent = addLeadingZero(timerObj.hours);
+    minutesEl.textContent = addLeadingZero(timerObj.minutes);
+    secondsEi.textContent = addLeadingZero(timerObj.seconds);
+    if (counter < 10000) {
+      timerEl.style.color = 'tomato';
     }
-  }, 1000);
+  } else {
+    Notiflix.Notify.success('Countdown finished');
+    timerEl.style.color = 'black';
+    clearInterval(timerId);
+  }
 }
