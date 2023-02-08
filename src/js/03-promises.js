@@ -1,9 +1,9 @@
 import Notiflix from 'notiflix';
 
 const formEl = document.querySelector('.form');
-for (let i = 0; i < formEl.children.length; i += 1) {
-  formEl.children[i].classList.add('input');
-}
+
+const childrens = [...formEl.children];
+childrens.forEach(children => children.classList.add('input'));
 
 formEl.addEventListener('submit', onSubmitCreatePromises);
 
