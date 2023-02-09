@@ -53,7 +53,7 @@ function addLeadingZero(value) {
 function onButtonClick() {
   onTimerTik();
 
-  timerId = setInterval(onTimerTik, 1000);
+  return (timerId = setInterval(onTimerTik, 1000));
 }
 
 function onTimerTik() {
