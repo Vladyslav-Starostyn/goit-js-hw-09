@@ -66,7 +66,7 @@ function onTimerTik() {
     minutesEl.textContent = addLeadingZero(timerObj.minutes);
     secondsEi.textContent = addLeadingZero(timerObj.seconds);
     if (counter < 10000) {
-      timerEl.style.color = 'green';
+      timerEl.style.color = 'tomato';
     }
   } else {
     Notiflix.Notify.success('Countdown finished');
