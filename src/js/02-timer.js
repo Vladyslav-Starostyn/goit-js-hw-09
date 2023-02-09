@@ -65,7 +65,7 @@ function onTimerTik() {
     hoursEl.textContent = addLeadingZero(timerObj.hours);
     minutesEl.textContent = addLeadingZero(timerObj.minutes);
     secondsEi.textContent = addLeadingZero(timerObj.seconds);
-    if (counter < 10000) {
+    if (counter <= 10000) {
       timerEl.style.color = 'tomato';
     }
   } else {
